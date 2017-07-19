@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-protocol HeightConfigurable: class {
+protocol HeightConfigurable {
 	
 	var height: CGFloat? { get set }
 

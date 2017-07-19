@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DescribeReusable: class {
+protocol DescribeReusable {
 	
 	var reuseIdentifier: String { get }
 
