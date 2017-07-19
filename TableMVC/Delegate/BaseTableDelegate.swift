@@ -11,6 +11,7 @@ import UIKit
 protocol TableDelegateManager: class {
 	
 	func tableDelegate(_ delegate: BaseTableDelegate, didSelectRowAt indexPath: IndexPath)
+
 }
 
 class BaseTableDelegate: NSObject, UITableViewDelegate {
@@ -28,4 +29,5 @@ class BaseTableDelegate: NSObject, UITableViewDelegate {
 		tableView.deselectRow(at: indexPath, animated: true)
 		delegate?.tableDelegate(self, didSelectRowAt: indexPath)
 	}
+	
 }

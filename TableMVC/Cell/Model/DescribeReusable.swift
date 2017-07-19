@@ -11,4 +11,5 @@ import Foundation
 protocol DescribeReusable: class {
 	
 	var reuseIdentifier: String { get }
+
 }

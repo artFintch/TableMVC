@@ -25,4 +25,5 @@ class BaseTableDatasource: NSObject, UITableViewDataSource {
 		
 		return cell!
 	}
+	
 }

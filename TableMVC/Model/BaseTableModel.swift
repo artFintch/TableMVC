@@ -12,6 +12,7 @@ protocol BaseTableModelDelegate: class {
 	
 	func tableModelDidUpdated(_ model: BaseTableModel)
 	func tableModel(_ model: BaseTableModel, updatingWasFailedWithError error: Error)
+
 }
 
 class BaseTableModel: NSObject {
@@ -20,4 +21,5 @@ class BaseTableModel: NSObject {
 	var cellModels: [CellModelInterface] = []
 	
 	func handleRowSelection(at indexPath: IndexPath) {}
+
 }

@@ -13,4 +13,5 @@ class BaseCell: UITableViewCell, CellInterface {
 	func configure(withModel model: CellModelInterface) {
 		fatalError("\(self) need override method configure(withModel:)")
 	}
+	
 }

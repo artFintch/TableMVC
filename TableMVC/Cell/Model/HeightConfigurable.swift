@@ -11,4 +11,5 @@ import CoreGraphics
 protocol HeightConfigurable: class {
 	
 	var height: CGFloat? { get set }
+
 }

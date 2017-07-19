@@ -16,5 +16,6 @@ extension UITableView {
 	
 	final func register<T: UITableViewCell>(type: T.Type) where T: Reusable {
 		register(type.self, forCellReuseIdentifier: type.reuseIdentifier)
-	}	
+	}
+	
 }

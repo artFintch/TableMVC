@@ -9,10 +9,11 @@
 import CoreGraphics
 
 class BaseCellModel: HeightConfigurable {
-	
+
 	var height: CGFloat?
 	
 	init(height: CGFloat? = nil) {
 		self.height = height
 	}
+	
 }

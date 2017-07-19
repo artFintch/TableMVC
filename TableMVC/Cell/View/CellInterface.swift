@@ -12,4 +12,5 @@ protocol CellInterface {
 	
 	associatedtype CellModel
 	func configure(withModel model: CellModel)
+	
 }
