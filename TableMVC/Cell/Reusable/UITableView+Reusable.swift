@@ -10,18 +10,11 @@ import UIKit
 
 extension UITableView {
 	
-	final func register<T: UITableViewCell>(type: T.Type)
-		where T: NibReusable
-	{
-		register(type.nib,
-		         forCellReuseIdentifier: type.reuseIdentifier)
+	final func register<T: UITableViewCell>(type: T.Type) where T: NibReusable {
+		register(type.nib, forCellReuseIdentifier: type.reuseIdentifier)
 	}
 	
-	final func register<T: UITableViewCell>(type: T.Type)
-		where T: Reusable
-	{
-		register(type.self,
-		         forCellReuseIdentifier: type.reuseIdentifier)
-	}
-	
+	final func register<T: UITableViewCell>(type: T.Type) where T: Reusable {
+		register(type.self, forCellReuseIdentifier: type.reuseIdentifier)
+	}	
 }

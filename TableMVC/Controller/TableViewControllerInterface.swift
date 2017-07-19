@@ -18,7 +18,6 @@ protocol TableViewControllerInterface: class, BaseTableModelDelegate, TableDeleg
 	var model: Model { get set }
 	var tableDatasource: Datasource { get set }
 	var tableDelegate: Delegate { get set }
-	
 }
 
 extension TableViewControllerInterface {
@@ -31,7 +30,6 @@ extension TableViewControllerInterface {
 	func tableModel(_ model: BaseTableModel, updatingWasFailedWithError error: Error) {
 		// Present alert with error, etc.
 	}
-	
 }
 
 extension TableViewControllerInterface {
@@ -39,7 +37,6 @@ extension TableViewControllerInterface {
 	func tableDelegate(_ delegate: BaseTableDelegate, didSelectRowAt indexPath: IndexPath) {
 		model.handleRowSelection(at: indexPath)
 	}
-	
 }
 
 extension TableViewControllerInterface {
@@ -54,5 +51,4 @@ extension TableViewControllerInterface {
 		model.delegate = self
 		tableDelegate.delegate = self
 	}
-	
 }

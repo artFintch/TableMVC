@@ -11,8 +11,6 @@ import UIKit
 class BaseCell: UITableViewCell, CellInterface {
 	
 	func configure(withModel model: CellModelInterface) {
-		// Need override in subclass
-		fatalError()
+		fatalError("\(self) need override method configure(withModel:)")
 	}
-	
 }

@@ -12,15 +12,12 @@ protocol BaseTableModelDelegate: class {
 	
 	func tableModelDidUpdated(_ model: BaseTableModel)
 	func tableModel(_ model: BaseTableModel, updatingWasFailedWithError error: Error)
-	
 }
 
 class BaseTableModel: NSObject {
 	
 	weak var delegate: BaseTableModelDelegate?
-	
 	var cellModels: [CellModelInterface] = []
 	
 	func handleRowSelection(at indexPath: IndexPath) {}
-	
 }

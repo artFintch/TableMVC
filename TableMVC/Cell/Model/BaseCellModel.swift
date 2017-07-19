@@ -15,5 +15,4 @@ class BaseCellModel: HeightConfigurable {
 	init(height: CGFloat? = nil) {
 		self.height = height
 	}
-	
 }
