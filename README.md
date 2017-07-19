@@ -8,5 +8,12 @@ TableMVC
 Base implementation of MVC for UIViewController with UITableView.
 I used the idea of cell reusing from [here](https://github.com/AliSoftware/Reusable).
 
+* ViewController
+  * Model
+  * Datasource
+  * Delegate
+* Cell
+  * Model
+
 ## License
 Released under the MIT license. See [LICENSE](https://github.com/artFintch/TableMVC/blob/master/LICENSE) for details.
