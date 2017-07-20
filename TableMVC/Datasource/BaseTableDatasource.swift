@@ -10,7 +10,11 @@ import UIKit
 
 class BaseTableDatasource: NSObject, UITableViewDataSource {
 	
-	var cellModels: [CellModelInterface] = []
+	weak var model: BaseTableModel?
+	
+	private var cellModels: [CellModelInterface] {
+		return model?.cellModels ?? []
+	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return cellModels.count

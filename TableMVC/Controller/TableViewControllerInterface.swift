@@ -8,23 +8,23 @@
 
 import UIKit
 
-protocol TableViewControllerInterface: class, BaseTableModelDelegate, TableDelegateManager {
+protocol TableViewControllerInterface: class, BaseTableModelDelegate {
 	
+	associatedtype TableView: UITableView
 	associatedtype Model: BaseTableModel
 	associatedtype Datasource: BaseTableDatasource
 	associatedtype Delegate: BaseTableDelegate
 	
-	var tableView: UITableView! { get set }
-	var model: Model { get set }
-	var tableDatasource: Datasource { get set }
-	var tableDelegate: Delegate { get set }
+	var tableView: TableView! { get set }
+	var model: Model { get }
+	var tableDatasource: Datasource { get }
+	var tableDelegate: Delegate { get }
 	
 }
 
 extension TableViewControllerInterface {
 
 	func tableModelDidUpdated(_ model: BaseTableModel) {
-		tableDatasource.cellModels = model.cellModels
 		tableView.reloadData()
 	}
 	
@@ -48,11 +48,10 @@ extension TableViewControllerInterface {
 		tableView.dataSource = tableDatasource
 		tableView.delegate = tableDelegate
 		
-		tableDatasource.cellModels = model.cellModels
-		tableDelegate.cellModels = model.cellModels
+		tableDatasource.model = model
+		tableDelegate.model = model
 		
 		model.delegate = self
-		tableDelegate.delegate = self
 	}
 	
 }

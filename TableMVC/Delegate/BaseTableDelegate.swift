@@ -8,15 +8,9 @@
 
 import UIKit
 
-protocol TableDelegateManager: class {
-	
-	func tableDelegate(_ delegate: BaseTableDelegate, didSelectRowAt indexPath: IndexPath)
-
-}
-
 class BaseTableDelegate: NSObject, UITableViewDelegate {
 	
-	weak var delegate: TableDelegateManager?
+	weak var model: BaseTableModel?
 	var cellModels: [HeightConfigurable] = []
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -27,7 +21,7 @@ class BaseTableDelegate: NSObject, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
-		delegate?.tableDelegate(self, didSelectRowAt: indexPath)
+		model?.handleRowSelection(at: indexPath)
 	}
 	
 }
