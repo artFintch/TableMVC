@@ -24,8 +24,13 @@ protocol TableViewControllerInterface: class, BaseTableModelDelegate {
 
 extension TableViewControllerInterface {
 
-	func tableModelDidUpdated(_ model: BaseTableModel) {
-		tableView.reloadData()
+	func tableModelDidUpdated(_ model: BaseTableModel, indexPaths: [IndexPath]) {
+		for indexPath in indexPaths {
+			guard let baseCell = tableView.cellForRow(at: indexPath) as? BaseCell else { continue }
+			if model.cellModels.count <= indexPath.row { continue }
+			let cellModel = model.cellModels[indexPath.row]
+			baseCell.configure(withModel: cellModel, animated: true)
+		}
 	}
 	
 	func tableModel(_ model: BaseTableModel, updatingWasFailedWithError error: Error) {

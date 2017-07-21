@@ -10,7 +10,7 @@ import Foundation
 
 protocol BaseTableModelDelegate: class {
 	
-	func tableModelDidUpdated(_ model: BaseTableModel)
+	func tableModelDidUpdated(_ model: BaseTableModel, indexPaths: [IndexPath])
 	func tableModel(_ model: BaseTableModel, updatingWasFailedWithError error: Error)
 
 }
