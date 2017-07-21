@@ -42,14 +42,16 @@ extension TableViewControllerInterface {
 	
 }
 
-extension TableViewControllerInterface {
+extension TableViewControllerInterface where Self: UIViewController {
 	
 	func build() {
 		tableView.dataSource = tableDatasource
 		tableView.delegate = tableDelegate
 		
 		tableDatasource.model = model
+		
 		tableDelegate.model = model
+		tableDelegate.viewController = self
 		
 		model.delegate = self
 	}

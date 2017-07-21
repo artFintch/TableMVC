@@ -11,6 +11,7 @@ import UIKit
 class BaseTableDelegate: NSObject, UITableViewDelegate {
 	
 	weak var model: BaseTableModel?
+	weak var viewController: UIViewController?
 	
 	var cellModels: [HeightConfigurable] {
 		return model?.cellModels ?? []
