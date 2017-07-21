@@ -11,8 +11,7 @@ import UIKit
 class BaseTableDatasource: NSObject, UITableViewDataSource {
 	
 	weak var model: BaseTableModel?
-	
-	private var cellModels: [CellModelInterface] {
+	var cellModels: [CellModelInterface] {
 		return model?.cellModels ?? []
 	}
 	

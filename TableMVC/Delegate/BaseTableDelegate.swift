@@ -11,7 +11,10 @@ import UIKit
 class BaseTableDelegate: NSObject, UITableViewDelegate {
 	
 	weak var model: BaseTableModel?
-	var cellModels: [HeightConfigurable] = []
+	
+	var cellModels: [HeightConfigurable] {
+		return model?.cellModels ?? []
+	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		guard indexPath.row < cellModels.count else { return tableView.rowHeight }
